@@ -1,0 +1,49 @@
+<div class="row" *ngIf="!preloaderStatus">
+
+  <div class="col s6 m4 l2" *ngFor="let anime of list">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="anime.img">
+        <a class="btn-floating halfway-fab waves-effect waves-light indigo" (click)="newtab(anime?.linkpage)">
+          <i class="material-icons">link</i>
+        </a>
+      </div>
+      <div class="card-content">
+        <p class="truncate"> {{anime.titulo}} </p>
+      </div>
+      <div class="card-action deep-purple-text">
+        <a href="javascript:void(0)" class="orange-text" (click)="openModal(anime)"> Assistir </a>
+
+        <a href="javascript:void(0)" class="indigo-text" (click)="newtab(anime?.link)">
+          <i class="material-icons right">open_in_new</i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div style="margin-top: 80px; width: 100%;" *ngIf="preloaderStatus">
+  <div class="centro">
+    <app-preloader *ngIf="preloaderStatus"></app-preloader>
+  </div>
+</div>
+
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal dark" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+  <div class="modal-content" style="min-height: 60vh;">
+
+    <video class="responsive-video" #video controls style="width: 90%; margin: 0 auto; display: block;">
+      <source type="video/mp4" #sourceVideo>
+    </video>
+
+  </div>
+  <div class="modal-footer">
+    <a class="waves-effect  waves-green purple darken-4 btn-flat white-text" (click)="closeModal()">
+      <i class="material-icons">close</i>
+    </a>
+  </div>
+</div>

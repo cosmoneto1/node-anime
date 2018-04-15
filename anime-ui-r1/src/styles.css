@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.modal.dark {
+    background-color: #03030380!important;
+}
+
+.modal.dark .modal-footer {
+    background-color: transparent;
+}
+
+
+.modal.dark .modal-footer  > .purple.darken-4{
+    background-color: transparent!important;
+}
+
+.modal.dark .modal-footer  > .purple.darken-4:hover{
+    background-color: #4a148c !important;
+}

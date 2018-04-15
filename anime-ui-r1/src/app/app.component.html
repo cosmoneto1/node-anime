@@ -1,0 +1,26 @@
+<div class="navbar-fixed">
+  <nav class=" deep-purple lighten-2">
+    <div class="nav-wrapper">
+      <img class="responsive-img img-menu" src="assets/android-icon-48x48.png" title="Animes ">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li routerLinkActive="active">
+          <a href="javascript:void(0)" routerLink="/home">Home</a>
+        </li>
+        <li>
+          <a href="javascript:void(0)" (click)="toggleStatus()">
+            <i class="material-icons">aspect_ratio</i>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+
+<div [ngClass]="{'container': status}">
+
+  <router-outlet></router-outlet>
+
+</div>
